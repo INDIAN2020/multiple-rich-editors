@@ -1,75 +1,63 @@
-=== Multiple Featured Images: Reloaded ===
+=== Multiple Rich Editors ===
 
 Contributors: nickohrn
 Donate link: http://example.com/
-Tags: admin, images
-Requires at least: 3.6
-Tested up to: 3.6
-Stable tag: 1.0.0
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: admin, editor
+Requires at least: 3.8
+Tested up to: 3.8.1
+Stable tag: 1.0.0.RC.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows developers to easily register additional image pickers for any post type.
+This plugin allows developers to easily register addition rich editors and retrieve / display the content entered within.
 
 == Description ==
 
-This plugin allows developers to easily register additional image pickers for any post type.
+This plugin allows developers to easily register addition rich editors and retrieve / display the content entered within.
 
 == Installation ==
 
-1. Upload `mfi-reloaded` to the `/wp-content/plugins/` directory
+1. Upload `multiple-rich-editors` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Use the provided template tags to create image pickers and display the data you need
+1. Register new rich editors using add_theme_support and use the provided template tags to retrieve and display the data you need
 
 == Frequently Asked Questions ==
 
-= How do I add an image picker? =
+= How do I add a rich editor? =
 
 Easy! In your theme's functions.php file, add the following code:
 
-`function register_custom_image_pickers() {
-	add_theme_support('mfi-reloaded', array(
-		'hero-image' => array(
+`function register_rich_editors() {
+	add_theme_support('multiple-rich-editors', array(
+		'additional-editor' => array(
+			'label' => __('Additional Editor'),
 			'post_types' => array('post'),
-			'labels' => array(
-				'name' => __('Hero Image'),
-				'set' => __('Set hero image'),
-				'remove' => __('Remove hero image'),
-				'popup_title' => __('Set Hero Image'),
-				'popup_select' => __('Set hero image'),
-			),
+			'wp_editor' => array('media_buttons' => true),
 		),
-		'sidekick-image' => array(
-			'post_types' => array('post'),
-			'labels' => array(
-				'name' => __('Sidekick Image'),
-				'set' => __('Set sidekick image'),
-				'remove' => __('Remove sidekick image'),
-				'popup_title' => __('Set Sidekick Image'),
-				'popup_select' => __('Set sidekick image'),
-			),
+		'additional-editor-2' => array(
+			'label' => __('Additional Editor 2'),
+			'post_types' => array('post', 'page'),
+			'wp_editor' => array('media_buttons' => false),
 		),
 	));
 }
-add_action('after_setup_theme', 'register_custom_image_pickers');`
+add_action('after_setup_theme', 'register_rich_editors');`
 
 Feel free to provide whatever values you need.
 
+= How do I know what I should provide when registering a rich editor? =
+
+Easy! Just take a look at the `/lib/template-tags.php` - there are detailed
+instructions in there on how to register editors and use the template
+tags to get the data you need.
+
 == Changelog ==
-
-= 1.0.0 = 
-
-* Changed from using a custom template tag for adding image pickers to the WordPress function `add_theme_support`
 
 = 1.0.0-RC1 =
 
 * Initial release
 
 == Upgrade Notice ==
-
-= 1.0.0 =
-
-If you were previously using the `mfi_reloaded_add_image_picker` template tag to add image pickers, you should switch to the new `add_theme_support` method.
 
 = 1.0.0-RC1 =
 
