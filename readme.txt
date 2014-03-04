@@ -51,14 +51,18 @@ Easy! Just take a look at the `/lib/template-tags.php` - there are detailed
 instructions in there on how to register editors and use the template
 tags to get the data you need.
 
+= My content loses the paragraphs that are specified in the editor. What do I do? =
+
+Multiple Rich Editors doesn't apply the default WordPress content filters on its content by default. However, there is a code snippet in `/lib/template-tags.php` that explains how to do this. Follow the directions there and you should be good to go!
+
 == Changelog ==
 
-= 1.0.0-RC1 =
+= 1.0.0 =
 
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.0-RC1 =
+= 1.0.0 =
 
-Initial release.
+* Initial release
