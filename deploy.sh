@@ -7,7 +7,7 @@
 # main config
 PLUGINSLUG=${PWD##*/} # returns basename of current directory
 CURRENTDIR=`pwd`
-MAINFILE="easyazon.php" # this should be the name of your main php file in the wordpress plugin
+MAINFILE="multiple-rich-editors.php" # this should be the name of your main php file in the wordpress plugin
 SVNUSER="nickohrn" # your svn username
 
 # git config

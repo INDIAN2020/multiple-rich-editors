@@ -1,12 +1,12 @@
 <?php
 /*
- Plugin Name: Multiple Rich Editors
- Plugin URI: https://github.com/nickohrn/multiple-rich-editors
- Description: Allows developers to quickly add multiple rich editors to any content type.
- Version: 1.0.0.
- Author: Nick Ohrn of Plugin-Developer.com
- Author URI: http://plugin-developer.com/
- */
+Plugin Name: Multiple Rich Editors
+Plugin URI: https://github.com/nickohrn/multiple-rich-editors
+Description: Allows developers to quickly add multiple rich editors to any content type.
+Version: 1.0.0.
+Author: Nick Ohrn of Plugin-Developer.com
+Author URI: http://plugin-developer.com/
+*/
 
 if(!class_exists('MRE')) {
 	class MRE {
