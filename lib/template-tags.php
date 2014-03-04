@@ -36,7 +36,7 @@ add_filter('mre_the_content', 'apply_content_filters_to_mre_the_content', 11, 3)
  * @return boolean True if an author has entered content for the specified editor
  */
 function mre_has_content($name, $post_id = null) {
-	return apply_filters('mre_has_content', !!(mre_get_content_id($name, $post_id)), $name, $post_id);
+	return apply_filters('mre_has_content', !!(mre_get_content($name, $post_id)), $name, $post_id);
 }
 
 /**
