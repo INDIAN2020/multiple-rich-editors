@@ -3,7 +3,7 @@
 Plugin Name: Multiple Rich Editors
 Plugin URI: https://github.com/nickohrn/multiple-rich-editors
 Description: Allows developers to quickly add multiple rich editors to any content type.
-Version: 1.0.0.
+Version: 1.0.0
 Author: Nick Ohrn of Plugin-Developer.com
 Author URI: http://plugin-developer.com/
 */
@@ -11,7 +11,7 @@ Author URI: http://plugin-developer.com/
 if(!class_exists('MRE')) {
 	class MRE {
 		/// Version
-		const VERSION = '1.0.0.';
+		const VERSION = '1.0.0';
 
 		public static function init() {
 			self::add_actions();
